@@ -24,7 +24,7 @@ const Home = () => {
 	};
 	return (
 		<section>
-			<Link to="/dashboard">Go To Dashboard</Link>
+			{token && <Link to="/dashboard">Go To Dashboard</Link>}
 			<button type="button" onClick={handleAuthorize}>
 				Authorize With Instagram
 			</button>
