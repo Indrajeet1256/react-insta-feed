@@ -34,7 +34,8 @@ const Home = () => {
 			try {
 				const response = await axios.post(
 					"https://api.instagram.com/oauth/access_token",
-					options
+					options,
+					{ withCredentials: false }
 				);
 				console.log(response);
 			} catch (error) {
