@@ -6,7 +6,7 @@ import axios from "axios";
 const APP_ID = "758057702404913";
 const REDIRECT_URI = "https://hilarious-cuchufli-538de2.netlify.app/";
 const SCOPE = "user_profile,user_media";
-const RESPONSE_TYPE = "code";
+const RESPONSE_TYPE = "";
 const CLIENT_SECRET = "44eaf13ea1323ad33e8a6c6974d7762c";
 
 const Home = () => {
@@ -24,19 +24,25 @@ const Home = () => {
 	useEffect(() => {
 		if (!code) return;
 		async function getToken() {
-			const options = {
-				client_id: APP_ID,
-				redirect_uri: REDIRECT_URI,
-				grant_type: "authorization_code",
-				code,
-				client_secret: CLIENT_SECRET,
+			const options = JSON.stringify({
+				client_id: "758057702404913",
+				client_secret: "44eaf13ea1323ad33e8a6c6974d7762c",
+				response_type: "authorization_code",
+				redirect_uri: "https://hilarious-cuchufli-538de2.netlify.app/",
+				code: code,
+			});
+
+			const config = {
+				method: "POST",
+				url: "https://api.instagram.com/oauth/access_token",
+				headers: {
+					"Content-Type": "application/json",
+					accept: "application/json",
+				},
+				body: options,
 			};
 			try {
-				const response = await axios.post(
-					"https://api.instagram.com/oauth/access_token",
-					options,
-					{ withCredentials: false }
-				);
+				const response = await axios(config);
 				console.log(response);
 			} catch (error) {
 				console.error(error);
