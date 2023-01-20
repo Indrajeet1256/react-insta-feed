@@ -9,12 +9,7 @@ const RESPONSE_TYPE = "code";
 
 const Home = () => {
 	const handleAuthorize = () => {
-		window.location = `https://api.instagram.com/oauth/authorize
-    ?client_id=${APP_ID}
-    &redirect_uri=${REDIRECT_URI}
-    &scope=${SCOPE}
-    &response_type=${RESPONSE_TYPE}
-    `;
+		window.location = `https://api.instagram.com/oauth/authorize?client_id=${APP_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}`;
 	};
 	return (
 		<section>
