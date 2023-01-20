@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const APP_ID = "758057702404913";
-const REDIRECT_URI = "https://hilarious-cuchufli-538de2.netlify.app/dashboard";
+const REDIRECT_URI = "https://hilarious-cuchufli-538de2.netlify.app/";
 const SCOPE = "user_profile,user_media";
 const RESPONSE_TYPE = "code";
 
