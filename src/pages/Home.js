@@ -27,7 +27,7 @@ const Home = () => {
 			const options = {
 				client_id: "758057702404913",
 				client_secret: "44eaf13ea1323ad33e8a6c6974d7762c",
-				response_type: "authorization_code",
+				grant_type: "authorization_code",
 				redirect_uri: "https://hilarious-cuchufli-538de2.netlify.app/",
 				code: code,
 			};
@@ -39,7 +39,7 @@ const Home = () => {
 					"Content-Type": "application/json",
 					accept: "application/json",
 				},
-				body: options,
+				body: JSON.stringify(options),
 			};
 			try {
 				const response = await axios(config);
