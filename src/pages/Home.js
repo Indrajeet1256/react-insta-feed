@@ -24,13 +24,13 @@ const Home = () => {
 	useEffect(() => {
 		if (!code) return;
 		async function getToken() {
-			const options = JSON.stringify({
+			const options = {
 				client_id: "758057702404913",
 				client_secret: "44eaf13ea1323ad33e8a6c6974d7762c",
 				response_type: "authorization_code",
 				redirect_uri: "https://hilarious-cuchufli-538de2.netlify.app/",
 				code: code,
-			});
+			};
 
 			const config = {
 				method: "POST",
