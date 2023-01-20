@@ -6,7 +6,7 @@ import axios from "axios";
 const APP_ID = "758057702404913";
 const REDIRECT_URI = "https://hilarious-cuchufli-538de2.netlify.app/";
 const SCOPE = "user_profile,user_media";
-const RESPONSE_TYPE = "";
+const RESPONSE_TYPE = "code";
 //const CLIENT_SECRET = "44eaf13ea1323ad33e8a6c6974d7762c";
 
 const Home = () => {
